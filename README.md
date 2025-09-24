@@ -4,7 +4,7 @@ A Java-based image comparison tool that analyzes and compares two images based o
 
 ## What This Project Does
 
-This application compares two images using advanced pixel-by-pixel analysis:
+This application compares two images using pixel-by-pixel analysis:
 1. **Loads two image files** from disk with proper error handling
 2. **Extracts RGB values** from every pixel in both images
 3. **Performs pixel-by-pixel comparison** to detect exact matches
