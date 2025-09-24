@@ -60,7 +60,7 @@ public class Main {
             
             // Check if comparison completed successfully
             if (!compare.isDone()) {
-                System.out.println("❌ Comparison failed to complete.");
+                System.out.println("ERROR: Comparison failed to complete.");
                 return;
             }
             
