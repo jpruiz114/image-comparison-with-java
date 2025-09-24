@@ -74,15 +74,15 @@ public class Main {
             System.out.println("\n--- Analysis Summary ---");
             
             if (result.isExactMatch()) {
-                System.out.println("✅ Images are IDENTICAL");
+                System.out.println("RESULT: Images are IDENTICAL");
             } else if (result.isSimilar(95.0)) {
-                System.out.println("✅ Images are VERY SIMILAR (>95% match)");
+                System.out.println("RESULT: Images are VERY SIMILAR (>95% match)");
             } else if (result.isSimilar(80.0)) {
-                System.out.println("⚠️  Images are SOMEWHAT SIMILAR (>80% match)");
+                System.out.println("RESULT: Images are SOMEWHAT SIMILAR (>80% match)");
             } else if (result.isSimilar(50.0)) {
-                System.out.println("⚠️  Images are SLIGHTLY SIMILAR (>50% match)");
+                System.out.println("RESULT: Images are SLIGHTLY SIMILAR (>50% match)");
             } else {
-                System.out.println("❌ Images are VERY DIFFERENT (<50% match)");
+                System.out.println("RESULT: Images are VERY DIFFERENT (<50% match)");
             }
             
             // Performance info
@@ -96,7 +96,7 @@ public class Main {
             System.out.println("Legacy isTheSame(): " + compare.isTheSame());
             
         } catch (Exception e) {
-            System.err.println("❌ Error during comparison: " + e.getMessage());
+            System.err.println("ERROR: Error during comparison: " + e.getMessage());
             e.printStackTrace();
         }
     }
