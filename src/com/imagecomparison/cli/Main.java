@@ -1,8 +1,8 @@
-package org.Main;
+package com.imagecomparison.cli;
 
-import org.Compare.Compare;
-import org.Compare.ComparisonResult;
-import org.ImageSpiders.ImageSpider;
+import com.imagecomparison.comparison.Compare;
+import com.imagecomparison.comparison.ComparisonResult;
+import com.imagecomparison.processing.ImageSpider;
 import java.io.File;
 
 /**
@@ -46,7 +46,7 @@ public class Main {
             performComparison(args[0], args[1]);
         } else {
             System.out.println("\nTip: You can provide two image paths as command line arguments to compare your own images:");
-            System.out.println("java org.Main.Main path/to/image1.jpg path/to/image2.jpg");
+            System.out.println("java com.imagecomparison.cli.Main path/to/image1.jpg path/to/image2.jpg");
         }
     }
     

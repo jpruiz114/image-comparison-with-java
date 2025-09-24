@@ -20,47 +20,41 @@ The enhanced algorithm uses proper pixel-by-pixel comparison instead of the flaw
 ## Project Structure
 
 ```
-org.Compare/
+image-comparison-with-java/
 ├── src/
-│   ├── org/
-│   │   ├── Main/
-│   │   │   └── Main.java              # Entry point of the application
-│   │   ├── Compare/
-│   │   │   ├── Compare.java           # Main comparison logic coordinator
-│   │   │   └── CompareHandler.java    # Handles the actual RGB comparison
-│   │   ├── ImageSpiders/
-│   │   │   ├── ImageSpider1.java      # Processes first image
-│   │   │   └── ImageSpider2.java      # Processes second image
-│   │   └── Percentage/
-│   │       ├── Percentage.java        # (Currently unused)
-│   │       ├── ColorPercentage.java   # (Currently unused)
-│   │       └── LightPercentage.java   # (Currently unused)
-├── assets/                            # Sample images for testing
-└── build.xml                          # NetBeans build configuration
+│   └── com/
+│       └── imagecomparison/
+│           ├── cli/
+│           │   └── Main.java                    # Entry point of the application
+│           ├── comparison/
+│           │   ├── Compare.java                 # Main comparison logic coordinator
+│           │   ├── CompareHandler.java          # Handles the actual RGB comparison
+│           │   └── ComparisonResult.java        # Detailed comparison results
+│           └── processing/
+│               └── ImageSpider.java             # Unified image processing class
+├── assets/                                      # Sample images for testing
+├── build/                                       # Compiled classes (ignored by git)
+└── .gitignore                                   # Git ignore file
 ```
 
 ## How to Run
 
 ### Prerequisites
 - Java Development Kit (JDK) 8 or higher
-- NetBeans IDE (recommended) or any Java IDE
-
-### Using NetBeans
-1. Open the project in NetBeans
-2. Update the file paths in `Main.java` to point to your image files
-3. Build and run the project
+- Any text editor or Java IDE (project is now IDE-agnostic)
 
 ### Using Command Line
 ```bash
-# Navigate to the source directory
-cd org.Compare/src
-
-# Compile the Java files
-javac -d ../build/classes org/Main/*.java org/Compare/*.java org/ImageSpiders/*.java org/Percentage/*.java
+# Compile the Java files (from project root)
+mkdir -p build/classes
+javac -d build/classes src/com/imagecomparison/*/*.java
 
 # Run the application
-cd ../build/classes
-java org.Main.Main
+cd build/classes
+java com.imagecomparison.cli.Main
+
+# Or run from project root with classpath
+java -cp build/classes com.imagecomparison.cli.Main
 ```
 
 ## Usage Examples
@@ -84,30 +78,19 @@ String image2Path = basePath + "assets" + File.separator + "2.jpg";
 Pass image paths as arguments for flexible comparison:
 ```bash
 # From project root
-java -cp org.Compare/build/classes org.Main.Main path/to/image1.jpg path/to/image2.jpg
+java -cp build/classes com.imagecomparison.cli.Main path/to/image1.jpg path/to/image2.jpg
 
 # Using relative paths
-java -cp org.Compare/build/classes org.Main.Main assets/1.jpg assets/2.jpg
+java -cp build/classes com.imagecomparison.cli.Main assets/1.jpg assets/2.jpg
 ```
-
-## Recent Improvements (Algorithm Fixed!)
-
-The project has been **significantly enhanced** with the following improvements:
-
-- **Fixed Comparison Algorithm**: Now uses proper pixel-by-pixel comparison instead of flawed RGB sum comparison
-- **Eliminated Code Duplication**: Replaced `ImageSpider1` and `ImageSpider2` with unified `ImageSpider` class  
-- **Cross-Platform Compatibility**: Removed hardcoded Windows paths, now works on all operating systems
-- **Enhanced Error Handling**: Comprehensive error handling with detailed error messages
-- **Rich Similarity Metrics**: Provides similarity percentages, MSE calculations, and multiple analysis thresholds
-- **Backward Compatibility**: All existing code continues to work with legacy methods
 
 ## Remaining Limitations
 
 **Minor remaining issues:**
 
-1. **Unused Code**: The `Percentage` package classes are still empty placeholders
-2. **Basic Algorithm**: Uses exact pixel matching - could be enhanced with perceptual comparison algorithms
-3. **Memory Usage**: Stores all pixel data in memory - could be optimized for very large images
+1. **Basic Algorithm**: Uses exact pixel matching - could be enhanced with perceptual comparison algorithms
+2. **Memory Usage**: Stores all pixel data in memory - could be optimized for very large images
+3. **No Build System**: Could benefit from Maven or Gradle for dependency management
 
 ## Enhanced Features
 
@@ -118,7 +101,7 @@ The project has been **significantly enhanced** with the following improvements:
 - **Cross-Platform**: Works on Windows, macOS, and Linux
 - **Error Resilience**: Robust error handling with informative messages
 - **Multiple Comparison Methods**: Exact matching, similarity thresholds, MSE analysis
-- **Rich Output**: Color-coded results with emoji indicators and detailed statistics
+- **Rich Output**: Clear text-based results with detailed statistics
 
 ## Future Enhancement Ideas
 

@@ -1,4 +1,4 @@
-package org.Compare;
+package com.imagecomparison.comparison;
 
 /**
  * Holds detailed results of image comparison analysis

@@ -1,4 +1,4 @@
-package org.ImageSpiders;
+package com.imagecomparison.processing;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;

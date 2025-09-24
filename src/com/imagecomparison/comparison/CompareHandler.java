@@ -1,6 +1,6 @@
-package org.Compare;
+package com.imagecomparison.comparison;
 
-import org.ImageSpiders.ImageSpider;
+import com.imagecomparison.processing.ImageSpider;
 
 /**
  * Enhanced CompareHandler with multiple comparison algorithms
