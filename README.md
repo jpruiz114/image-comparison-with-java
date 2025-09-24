@@ -90,20 +90,20 @@ java -cp org.Compare/build/classes org.Main.Main path/to/image1.jpg path/to/imag
 java -cp org.Compare/build/classes org.Main.Main assets/1.jpg assets/2.jpg
 ```
 
-## ✅ Recent Improvements (Algorithm Fixed!)
+## Recent Improvements (Algorithm Fixed!)
 
 The project has been **significantly enhanced** with the following improvements:
 
-✅ **Fixed Comparison Algorithm**: Now uses proper pixel-by-pixel comparison instead of flawed RGB sum comparison
-✅ **Eliminated Code Duplication**: Replaced `ImageSpider1` and `ImageSpider2` with unified `ImageSpider` class  
-✅ **Cross-Platform Compatibility**: Removed hardcoded Windows paths, now works on all operating systems
-✅ **Enhanced Error Handling**: Comprehensive error handling with detailed error messages
-✅ **Rich Similarity Metrics**: Provides similarity percentages, MSE calculations, and multiple analysis thresholds
-✅ **Backward Compatibility**: All existing code continues to work with legacy methods
+- **Fixed Comparison Algorithm**: Now uses proper pixel-by-pixel comparison instead of flawed RGB sum comparison
+- **Eliminated Code Duplication**: Replaced `ImageSpider1` and `ImageSpider2` with unified `ImageSpider` class  
+- **Cross-Platform Compatibility**: Removed hardcoded Windows paths, now works on all operating systems
+- **Enhanced Error Handling**: Comprehensive error handling with detailed error messages
+- **Rich Similarity Metrics**: Provides similarity percentages, MSE calculations, and multiple analysis thresholds
+- **Backward Compatibility**: All existing code continues to work with legacy methods
 
 ## Remaining Limitations
 
-⚠️ **Minor remaining issues:**
+**Minor remaining issues:**
 
 1. **Unused Code**: The `Percentage` package classes are still empty placeholders
 2. **Basic Algorithm**: Uses exact pixel matching - could be enhanced with perceptual comparison algorithms
@@ -111,7 +111,7 @@ The project has been **significantly enhanced** with the following improvements:
 
 ## Enhanced Features
 
-🎯 **New Capabilities:**
+**New Capabilities:**
 
 - **Comprehensive Analysis**: Get detailed similarity reports with multiple metrics
 - **Command Line Support**: Pass image paths as arguments for flexible usage
